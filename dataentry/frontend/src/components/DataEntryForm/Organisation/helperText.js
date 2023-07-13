@@ -20,8 +20,6 @@
 
 /**
 * @author Ronnie van Kempen  (ronnie.vankempen@wur.nl)
-* @author Marlies de Keizer (marlies.dekeizer@wur.nl)
-* @author Eliya Buyukkaya (eliya.buyukkaya@wur.nl)
 */
 
 import { OptionHeader, OptionExplanation } from "../../HelperText";
