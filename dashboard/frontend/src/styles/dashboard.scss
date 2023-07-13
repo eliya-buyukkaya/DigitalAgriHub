@@ -1,0 +1,71 @@
+$mydarkblue: #2D2E83;
+$mylightblue: #0eacc1;
+$mygreen: #46B980;
+$mygrey: #999;
+$mylightgrey: #EEE;
+
+
+.filter-button {
+    margin-top: 0.5em;
+    width: 100%;
+}
+.multiSelectContainer {
+    margin-bottom: 0.5em;
+    background-color: white;
+    
+    .search-wrapper {
+        overflow: hidden;
+
+        input {
+            min-width: 100%;
+        }
+            
+        .searchBox {
+            font-weight: 300;
+        }
+    }
+}
+.chip, .singleChip {
+    font-size: 0.7rem !important;
+    padding: 3px 10px !important;
+    white-space: normal !important;
+    margin-bottom: 0.5em !important;
+    
+    .closeIcon {
+        width: 0.7rem !important;
+        height: 0.7rem !important;
+    }   
+}
+.chip, .highlightOption, .multiSelectContainer li:hover {
+    background-color: #0eacc1 !important;
+}
+.optionListContainer {
+    z-index: 10 !important;
+}
+.optionContainer li {
+    padding: 0.1rem !important;
+}
+.country-select {
+    width: 100%;
+    padding: 0.2rem 0.5rem;
+    font-weight: 300;
+    margin-bottom: 0.3em;
+}
+
+.kpi-panel {
+    margin-bottom: 0px !important;
+
+    td {
+        font-size: 1rem;
+        font-weight: 400 !important;
+    }
+    
+    th {
+        font-size: 1.1rem;
+    }
+    
+    th, td {
+        border: none !important;
+        color: $mydarkblue;
+    }
+}

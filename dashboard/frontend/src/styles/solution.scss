@@ -1,0 +1,32 @@
+$mydarkblue: #2D2E83;
+$mylightblue: #0eacc1;
+$mygreen: #46B980;
+$mygrey: #999;
+
+.page-item.active .page-link {
+    border-color: $mylightblue;
+    background-color: $mylightblue;
+}
+.card {
+    height: 100%;
+}
+.card-title {
+    color: $mydarkblue;
+    height: 1.4em !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-text:first-of-type {
+    height: 2em !important;    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-text:nth-of-type(2) {
+    height: 7em;
+}
+.card-text a.btn {
+    color: #f8f9fa;
+    border-radius: 5px;
+}    

@@ -1,0 +1,77 @@
+$mydarkblue: #2D2E83;
+$mylightblue: #0eacc1;
+$mygreen: #46B980;
+$mygrey: #999;
+
+$theme-colors: (
+    "primary": $mygreen,
+    "secondary": $mydarkblue,
+    "danger": $mygreen
+);
+
+$link-color: $mygreen;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
+@import "bootstrap";
+
+body {
+    height: 100vh;
+    background-color: $white !important;
+    font-family: "Roboto" !important;
+    font-size: 13px !important;
+    font-weight: 300 !important;
+  	
+    h2 {
+        font-family: "Titillium Web" !important;
+  	    font-size: 20px !important;
+  	    font-weight: 600 !important;
+  	    line-height: 24px !important;
+    }
+
+    h3 {
+        font-size: 15px !important;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;    
+    }
+    
+    h4 {
+        font-size: 13px !important;
+        text-align: center;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    td, th {
+        border: 1px solid #999;
+        padding: 0.5rem;
+        text-align: left;
+    }
+
+    #react {
+        height: 100%;
+    }
+    
+    .btn {
+        font-size: 0.8rem;
+    }
+    .btn-static, .btn-static:hover {
+        color: $mygreen;
+        background-color: white;
+        cursor: default;
+        pointer-events: none;
+    }
+    .btn-static:active {
+        -moz-box-shadow:    inset 0 0 0px white !important;
+        -webkit-box-shadow: inset 0 0 0px white !important;
+        box-shadow:         inset 0 0 0px white !important;
+    }
+    .btn-sm {
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+    }
+}

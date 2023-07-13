@@ -1,0 +1,45 @@
+/* 
+  Styling rules for the tinymce wysiwyg editor. 
+  
+  The rules will be applied to both the editor and the final content.
+
+  Sorry could not find an easier way than prefixing all css rules 
+  with .tinmce-content. This class will be added to the editor and should
+  also be added in the container where the html is shown.
+
+  If you omit it, the styles are aplied to all content (globally)
+*/
+
+/*
+.tinymce-content h3 {
+  color: red;
+}
+
+.tinymce-content p:first-of-type {
+  margin-top: 0;
+}
+
+.tinymce-content p:last-child {
+  margin-bottom: 0;
+}
+
+.tinymce-content ul {
+  position: relative;
+  left: 20px;
+  max-width: calc(100% - 20px);
+  padding-left: 0;
+}
+
+.tinymce-content img {
+  margin: 16px;
+  max-width: 911px;
+  height: auto;
+}
+
+@media (min-width: 1000px) {
+  .tinymce-content img {
+    max-width: calc(100% - 32px);
+    height: auto;
+  }
+}
+*/
