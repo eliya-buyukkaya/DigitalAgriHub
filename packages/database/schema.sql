@@ -1,10 +1,10 @@
--- daghub_dataentry.business_funding_stages definition
+-- business_funding_stages definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.business_funding_stages;
+-- DROP TABLE business_funding_stages;
 
-CREATE TABLE daghub_dataentry.business_funding_stages (
+CREATE TABLE business_funding_stages (
 	id serial4 NOT NULL,
 	description text NOT NULL,
 	CONSTRAINT business_funding_stages_description_key UNIQUE (description),
@@ -12,13 +12,13 @@ CREATE TABLE daghub_dataentry.business_funding_stages (
 );
 
 
--- daghub_dataentry.business_growth_stages definition
+-- business_growth_stages definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.business_growth_stages;
+-- DROP TABLE business_growth_stages;
 
-CREATE TABLE daghub_dataentry.business_growth_stages (
+CREATE TABLE business_growth_stages (
 	id serial4 NOT NULL,
 	description text NOT NULL,
 	CONSTRAINT business_growth_stages_description_key UNIQUE (description),
@@ -26,13 +26,13 @@ CREATE TABLE daghub_dataentry.business_growth_stages (
 );
 
 
--- daghub_dataentry.business_models definition
+-- business_models definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.business_models;
+-- DROP TABLE business_models;
 
-CREATE TABLE daghub_dataentry.business_models (
+CREATE TABLE business_models (
 	id serial4 NOT NULL,
 	description text NOT NULL,
 	CONSTRAINT business_models_description_key UNIQUE (description),
@@ -40,13 +40,13 @@ CREATE TABLE daghub_dataentry.business_models (
 );
 
 
--- daghub_dataentry.channels definition
+-- channels definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.channels;
+-- DROP TABLE channels;
 
-CREATE TABLE daghub_dataentry.channels (
+CREATE TABLE channels (
 	id serial4 NOT NULL,
 	description text NOT NULL,
 	CONSTRAINT channels_description_key UNIQUE (description),
@@ -54,13 +54,13 @@ CREATE TABLE daghub_dataentry.channels (
 );
 
 
--- daghub_dataentry.countries definition
+-- countries definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.countries;
+-- DROP TABLE countries;
 
-CREATE TABLE daghub_dataentry.countries (
+CREATE TABLE countries (
 	id text NOT NULL,
 	description text NOT NULL,
 	lmic bool NOT NULL,
@@ -69,13 +69,13 @@ CREATE TABLE daghub_dataentry.countries (
 );
 
 
--- daghub_dataentry.countryregions definition
+-- countryregions definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.countryregions;
+-- DROP TABLE countryregions;
 
-CREATE TABLE daghub_dataentry.countryregions (
+CREATE TABLE countryregions (
 	id serial4 NOT NULL,
 	"label" text NOT NULL,
 	description text NULL,
@@ -84,13 +84,13 @@ CREATE TABLE daghub_dataentry.countryregions (
 );
 
 
--- daghub_dataentry.languages definition
+-- languages definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.languages;
+-- DROP TABLE languages;
 
-CREATE TABLE daghub_dataentry.languages (
+CREATE TABLE languages (
 	id serial4 NOT NULL,
 	description text NOT NULL,
 	CONSTRAINT languages_description_key UNIQUE (description),
@@ -98,13 +98,13 @@ CREATE TABLE daghub_dataentry.languages (
 );
 
 
--- daghub_dataentry.organisation_types definition
+-- organisation_types definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.organisation_types;
+-- DROP TABLE organisation_types;
 
-CREATE TABLE daghub_dataentry.organisation_types (
+CREATE TABLE organisation_types (
 	id serial4 NOT NULL,
 	description text NOT NULL,
 	CONSTRAINT organisation_types_description_key UNIQUE (description),
@@ -112,13 +112,13 @@ CREATE TABLE daghub_dataentry.organisation_types (
 );
 
 
--- daghub_dataentry.sectors definition
+-- sectors definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.sectors;
+-- DROP TABLE sectors;
 
-CREATE TABLE daghub_dataentry.sectors (
+CREATE TABLE sectors (
 	id serial4 NOT NULL,
 	description text NOT NULL,
 	CONSTRAINT sectors_description_key UNIQUE (description),
@@ -126,13 +126,13 @@ CREATE TABLE daghub_dataentry.sectors (
 );
 
 
--- daghub_dataentry.tags definition
+-- tags definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.tags;
+-- DROP TABLE tags;
 
-CREATE TABLE daghub_dataentry.tags (
+CREATE TABLE tags (
 	id serial4 NOT NULL,
 	description text NOT NULL,
 	CONSTRAINT tags_description_key UNIQUE (description),
@@ -140,13 +140,13 @@ CREATE TABLE daghub_dataentry.tags (
 );
 
 
--- daghub_dataentry.technologies definition
+-- technologies definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.technologies;
+-- DROP TABLE technologies;
 
-CREATE TABLE daghub_dataentry.technologies (
+CREATE TABLE technologies (
 	id serial4 NOT NULL,
 	description text NOT NULL,
 	CONSTRAINT technologies_description_key UNIQUE (description),
@@ -154,13 +154,13 @@ CREATE TABLE daghub_dataentry.technologies (
 );
 
 
--- daghub_dataentry.use_cases definition
+-- use_cases definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.use_cases;
+-- DROP TABLE use_cases;
 
-CREATE TABLE daghub_dataentry.use_cases (
+CREATE TABLE use_cases (
 	id serial4 NOT NULL,
 	description text NOT NULL,
 	CONSTRAINT use_cases_description_key UNIQUE (description),
@@ -168,13 +168,13 @@ CREATE TABLE daghub_dataentry.use_cases (
 );
 
 
--- daghub_dataentry.users definition
+-- users definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.users;
+-- DROP TABLE users;
 
-CREATE TABLE daghub_dataentry.users (
+CREATE TABLE users (
 	id serial4 NOT NULL,
 	"name" text NOT NULL,
 	company text NOT NULL,
@@ -193,59 +193,59 @@ CREATE TABLE daghub_dataentry.users (
 );
 
 
--- daghub_dataentry.countries_in_countryregions definition
+-- countries_in_countryregions definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.countries_in_countryregions;
+-- DROP TABLE countries_in_countryregions;
 
-CREATE TABLE daghub_dataentry.countries_in_countryregions (
+CREATE TABLE countries_in_countryregions (
 	country_id text NOT NULL,
 	countryregions_id int4 NOT NULL,
 	CONSTRAINT countries_in_countryregions_pkey PRIMARY KEY (country_id, countryregions_id),
-	CONSTRAINT countries_in_countryregions_country_id_fkey FOREIGN KEY (country_id) REFERENCES daghub_dataentry.countries(id) ON DELETE CASCADE,
-	CONSTRAINT countries_in_countryregions_countryregions_id_fkey FOREIGN KEY (countryregions_id) REFERENCES daghub_dataentry.countryregions(id) ON DELETE CASCADE
+	CONSTRAINT countries_in_countryregions_country_id_fkey FOREIGN KEY (country_id) REFERENCES countries(id) ON DELETE CASCADE,
+	CONSTRAINT countries_in_countryregions_countryregions_id_fkey FOREIGN KEY (countryregions_id) REFERENCES countryregions(id) ON DELETE CASCADE
 );
 
 
--- daghub_dataentry.regions definition
+-- regions definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.regions;
+-- DROP TABLE regions;
 
-CREATE TABLE daghub_dataentry.regions (
+CREATE TABLE regions (
 	id serial4 NOT NULL,
 	country_id text NULL,
 	description text NOT NULL,
 	CONSTRAINT country_description_unique UNIQUE (country_id, description),
 	CONSTRAINT regions_pkey PRIMARY KEY (id),
-	CONSTRAINT regions_country_id_fkey FOREIGN KEY (country_id) REFERENCES daghub_dataentry.countries(id) ON DELETE RESTRICT ON UPDATE RESTRICT
+	CONSTRAINT regions_country_id_fkey FOREIGN KEY (country_id) REFERENCES countries(id) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
 
--- daghub_dataentry.sub_use_cases definition
+-- sub_use_cases definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.sub_use_cases;
+-- DROP TABLE sub_use_cases;
 
-CREATE TABLE daghub_dataentry.sub_use_cases (
+CREATE TABLE sub_use_cases (
 	id serial4 NOT NULL,
 	usecase_id int4 NOT NULL,
 	description text NOT NULL,
 	CONSTRAINT sub_use_cases_pkey PRIMARY KEY (id),
-	CONSTRAINT sub_use_cases_usecase_id_fkey FOREIGN KEY (usecase_id) REFERENCES daghub_dataentry.use_cases(id) ON DELETE RESTRICT ON UPDATE RESTRICT
+	CONSTRAINT sub_use_cases_usecase_id_fkey FOREIGN KEY (usecase_id) REFERENCES use_cases(id) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
 
--- daghub_dataentry.organisations definition
+-- organisations definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.organisations;
+-- DROP TABLE organisations;
 
-CREATE TABLE daghub_dataentry.organisations (
+CREATE TABLE organisations (
 	id serial4 NOT NULL,
 	"name" text NOT NULL,
 	description text NULL,
@@ -263,21 +263,21 @@ CREATE TABLE daghub_dataentry.organisations (
 	owners _text NOT NULL,
 	datemodifiedowner timestamp NULL,
 	CONSTRAINT organisations_pkey PRIMARY KEY (id),
-	CONSTRAINT organisations_business_funding_stage_id_fkey FOREIGN KEY (business_funding_stage_id) REFERENCES daghub_dataentry.business_funding_stages(id) ON DELETE RESTRICT ON UPDATE RESTRICT,
-	CONSTRAINT organisations_business_growth_stage_id_fkey FOREIGN KEY (business_growth_stage_id) REFERENCES daghub_dataentry.business_growth_stages(id) ON DELETE RESTRICT ON UPDATE RESTRICT,
-	CONSTRAINT organisations_hqcountry_id_fkey FOREIGN KEY (hqcountry_id) REFERENCES daghub_dataentry.countries(id) ON DELETE RESTRICT ON UPDATE RESTRICT,
-	CONSTRAINT organisations_hqregion_id_fkey FOREIGN KEY (hqregion_id) REFERENCES daghub_dataentry.regions(id) ON DELETE RESTRICT ON UPDATE RESTRICT,
-	CONSTRAINT organisations_organisationtype_id_fkey FOREIGN KEY (organisationtype_id) REFERENCES daghub_dataentry.organisation_types(id) ON DELETE RESTRICT ON UPDATE RESTRICT
+	CONSTRAINT organisations_business_funding_stage_id_fkey FOREIGN KEY (business_funding_stage_id) REFERENCES business_funding_stages(id) ON DELETE RESTRICT ON UPDATE RESTRICT,
+	CONSTRAINT organisations_business_growth_stage_id_fkey FOREIGN KEY (business_growth_stage_id) REFERENCES business_growth_stages(id) ON DELETE RESTRICT ON UPDATE RESTRICT,
+	CONSTRAINT organisations_hqcountry_id_fkey FOREIGN KEY (hqcountry_id) REFERENCES countries(id) ON DELETE RESTRICT ON UPDATE RESTRICT,
+	CONSTRAINT organisations_hqregion_id_fkey FOREIGN KEY (hqregion_id) REFERENCES regions(id) ON DELETE RESTRICT ON UPDATE RESTRICT,
+	CONSTRAINT organisations_organisationtype_id_fkey FOREIGN KEY (organisationtype_id) REFERENCES organisation_types(id) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
 
--- daghub_dataentry.solutions definition
+-- solutions definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.solutions;
+-- DROP TABLE solutions;
 
-CREATE TABLE daghub_dataentry.solutions (
+CREATE TABLE solutions (
 	id serial4 NOT NULL,
 	"name" text NOT NULL,
 	description text NOT NULL,
@@ -316,173 +316,173 @@ CREATE TABLE daghub_dataentry.solutions (
 	CONSTRAINT solutions_shfusers_check CHECK ((shfusers >= 0)),
 	CONSTRAINT solutions_womenusers_check CHECK ((womenusers >= 0)),
 	CONSTRAINT solutions_youthusers_check CHECK ((youthusers >= 0)),
-	CONSTRAINT solutions_organisation_id_fkey FOREIGN KEY (organisation_id) REFERENCES daghub_dataentry.organisations(id) ON DELETE RESTRICT ON UPDATE RESTRICT,
-	CONSTRAINT solutions_primarysubusecase_id_fkey FOREIGN KEY (primarysubusecase_id) REFERENCES daghub_dataentry.sub_use_cases(id) ON DELETE RESTRICT ON UPDATE RESTRICT
+	CONSTRAINT solutions_organisation_id_fkey FOREIGN KEY (organisation_id) REFERENCES organisations(id) ON DELETE RESTRICT ON UPDATE RESTRICT,
+	CONSTRAINT solutions_primarysubusecase_id_fkey FOREIGN KEY (primarysubusecase_id) REFERENCES sub_use_cases(id) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
 
--- daghub_dataentry.sub_use_cases_in_solutions definition
+-- sub_use_cases_in_solutions definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.sub_use_cases_in_solutions;
+-- DROP TABLE sub_use_cases_in_solutions;
 
-CREATE TABLE daghub_dataentry.sub_use_cases_in_solutions (
+CREATE TABLE sub_use_cases_in_solutions (
 	subusecase_id int4 NOT NULL,
 	solution_id int4 NOT NULL,
 	CONSTRAINT sub_use_cases_in_solutions_pkey PRIMARY KEY (subusecase_id, solution_id),
-	CONSTRAINT sub_use_cases_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES daghub_dataentry.solutions(id) ON DELETE CASCADE,
-	CONSTRAINT sub_use_cases_in_solutions_subusecase_id_fkey FOREIGN KEY (subusecase_id) REFERENCES daghub_dataentry.sub_use_cases(id) ON DELETE CASCADE
+	CONSTRAINT sub_use_cases_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES solutions(id) ON DELETE CASCADE,
+	CONSTRAINT sub_use_cases_in_solutions_subusecase_id_fkey FOREIGN KEY (subusecase_id) REFERENCES sub_use_cases(id) ON DELETE CASCADE
 );
 
 
--- daghub_dataentry.tags_in_solutions definition
+-- tags_in_solutions definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.tags_in_solutions;
+-- DROP TABLE tags_in_solutions;
 
-CREATE TABLE daghub_dataentry.tags_in_solutions (
+CREATE TABLE tags_in_solutions (
 	tag_id int4 NOT NULL,
 	solution_id int4 NOT NULL,
 	CONSTRAINT tags_in_solutions_pkey PRIMARY KEY (tag_id, solution_id),
-	CONSTRAINT tags_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES daghub_dataentry.solutions(id) ON DELETE CASCADE,
-	CONSTRAINT tags_in_solutions_tag_id_fkey FOREIGN KEY (tag_id) REFERENCES daghub_dataentry.tags(id) ON DELETE CASCADE
+	CONSTRAINT tags_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES solutions(id) ON DELETE CASCADE,
+	CONSTRAINT tags_in_solutions_tag_id_fkey FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE
 );
 
 
--- daghub_dataentry.technologies_in_solutions definition
+-- technologies_in_solutions definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.technologies_in_solutions;
+-- DROP TABLE technologies_in_solutions;
 
-CREATE TABLE daghub_dataentry.technologies_in_solutions (
+CREATE TABLE technologies_in_solutions (
 	technology_id int4 NOT NULL,
 	solution_id int4 NOT NULL,
 	CONSTRAINT technologies_in_solutions_pkey PRIMARY KEY (technology_id, solution_id),
-	CONSTRAINT technologies_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES daghub_dataentry.solutions(id) ON DELETE CASCADE,
-	CONSTRAINT technologies_in_solutions_technology_id_fkey FOREIGN KEY (technology_id) REFERENCES daghub_dataentry.technologies(id) ON DELETE CASCADE
+	CONSTRAINT technologies_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES solutions(id) ON DELETE CASCADE,
+	CONSTRAINT technologies_in_solutions_technology_id_fkey FOREIGN KEY (technology_id) REFERENCES technologies(id) ON DELETE CASCADE
 );
 
 
--- daghub_dataentry.business_models_in_solutions definition
+-- business_models_in_solutions definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.business_models_in_solutions;
+-- DROP TABLE business_models_in_solutions;
 
-CREATE TABLE daghub_dataentry.business_models_in_solutions (
+CREATE TABLE business_models_in_solutions (
 	businessmodel_id int4 NOT NULL,
 	solution_id int4 NOT NULL,
 	CONSTRAINT business_models_in_solutions_pkey PRIMARY KEY (businessmodel_id, solution_id),
-	CONSTRAINT business_models_in_solutions_businessmodel_id_fkey FOREIGN KEY (businessmodel_id) REFERENCES daghub_dataentry.business_models(id) ON DELETE CASCADE,
-	CONSTRAINT business_models_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES daghub_dataentry.solutions(id) ON DELETE CASCADE
+	CONSTRAINT business_models_in_solutions_businessmodel_id_fkey FOREIGN KEY (businessmodel_id) REFERENCES business_models(id) ON DELETE CASCADE,
+	CONSTRAINT business_models_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES solutions(id) ON DELETE CASCADE
 );
 
 
--- daghub_dataentry.channels_in_solutions definition
+-- channels_in_solutions definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.channels_in_solutions;
+-- DROP TABLE channels_in_solutions;
 
-CREATE TABLE daghub_dataentry.channels_in_solutions (
+CREATE TABLE channels_in_solutions (
 	channel_id int4 NOT NULL,
 	solution_id int4 NOT NULL,
 	CONSTRAINT channels_in_solutions_pkey PRIMARY KEY (channel_id, solution_id),
-	CONSTRAINT channels_in_solutions_channel_id_fkey FOREIGN KEY (channel_id) REFERENCES daghub_dataentry.channels(id) ON DELETE CASCADE,
-	CONSTRAINT channels_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES daghub_dataentry.solutions(id) ON DELETE CASCADE
+	CONSTRAINT channels_in_solutions_channel_id_fkey FOREIGN KEY (channel_id) REFERENCES channels(id) ON DELETE CASCADE,
+	CONSTRAINT channels_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES solutions(id) ON DELETE CASCADE
 );
 
 
--- daghub_dataentry.countries_in_solutions definition
+-- countries_in_solutions definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.countries_in_solutions;
+-- DROP TABLE countries_in_solutions;
 
-CREATE TABLE daghub_dataentry.countries_in_solutions (
+CREATE TABLE countries_in_solutions (
 	country_id text NOT NULL,
 	solution_id int4 NOT NULL,
 	CONSTRAINT countries_in_solutions_pkey PRIMARY KEY (country_id, solution_id),
-	CONSTRAINT countries_in_solutions_country_id_fkey FOREIGN KEY (country_id) REFERENCES daghub_dataentry.countries(id) ON DELETE CASCADE,
-	CONSTRAINT countries_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES daghub_dataentry.solutions(id) ON DELETE CASCADE
+	CONSTRAINT countries_in_solutions_country_id_fkey FOREIGN KEY (country_id) REFERENCES countries(id) ON DELETE CASCADE,
+	CONSTRAINT countries_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES solutions(id) ON DELETE CASCADE
 );
 
 
--- daghub_dataentry.languages_in_solutions definition
+-- languages_in_solutions definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.languages_in_solutions;
+-- DROP TABLE languages_in_solutions;
 
-CREATE TABLE daghub_dataentry.languages_in_solutions (
+CREATE TABLE languages_in_solutions (
 	language_id int4 NOT NULL,
 	solution_id int4 NOT NULL,
 	CONSTRAINT languages_in_solutions_pkey PRIMARY KEY (language_id, solution_id),
-	CONSTRAINT languages_in_solutions_language_id_fkey FOREIGN KEY (language_id) REFERENCES daghub_dataentry.languages(id) ON DELETE CASCADE,
-	CONSTRAINT languages_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES daghub_dataentry.solutions(id) ON DELETE CASCADE
+	CONSTRAINT languages_in_solutions_language_id_fkey FOREIGN KEY (language_id) REFERENCES languages(id) ON DELETE CASCADE,
+	CONSTRAINT languages_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES solutions(id) ON DELETE CASCADE
 );
 
 
--- daghub_dataentry.organisation_translations definition
+-- organisation_translations definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.organisation_translations;
+-- DROP TABLE organisation_translations;
 
-CREATE TABLE daghub_dataentry.organisation_translations (
+CREATE TABLE organisation_translations (
 	organisation_id int4 NOT NULL,
 	language_id int4 NOT NULL,
 	"translation" text NULL,
 	CONSTRAINT organisation_translations_pkey PRIMARY KEY (organisation_id, language_id),
-	CONSTRAINT organisation_translations_language_id_fkey FOREIGN KEY (language_id) REFERENCES daghub_dataentry.languages(id) ON DELETE CASCADE,
-	CONSTRAINT organisation_translations_organisation_id_fkey FOREIGN KEY (organisation_id) REFERENCES daghub_dataentry.organisations(id) ON DELETE CASCADE
+	CONSTRAINT organisation_translations_language_id_fkey FOREIGN KEY (language_id) REFERENCES languages(id) ON DELETE CASCADE,
+	CONSTRAINT organisation_translations_organisation_id_fkey FOREIGN KEY (organisation_id) REFERENCES organisations(id) ON DELETE CASCADE
 );
 
 
--- daghub_dataentry.regions_in_solutions definition
+-- regions_in_solutions definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.regions_in_solutions;
+-- DROP TABLE regions_in_solutions;
 
-CREATE TABLE daghub_dataentry.regions_in_solutions (
+CREATE TABLE regions_in_solutions (
 	region_id int4 NOT NULL,
 	solution_id int4 NOT NULL,
 	CONSTRAINT regions_in_solutions_pkey PRIMARY KEY (region_id, solution_id),
-	CONSTRAINT regions_in_solutions_region_id_fkey FOREIGN KEY (region_id) REFERENCES daghub_dataentry.regions(id) ON DELETE CASCADE,
-	CONSTRAINT regions_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES daghub_dataentry.solutions(id) ON DELETE CASCADE
+	CONSTRAINT regions_in_solutions_region_id_fkey FOREIGN KEY (region_id) REFERENCES regions(id) ON DELETE CASCADE,
+	CONSTRAINT regions_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES solutions(id) ON DELETE CASCADE
 );
 
 
--- daghub_dataentry.sectors_in_solutions definition
+-- sectors_in_solutions definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.sectors_in_solutions;
+-- DROP TABLE sectors_in_solutions;
 
-CREATE TABLE daghub_dataentry.sectors_in_solutions (
+CREATE TABLE sectors_in_solutions (
 	sector_id int4 NOT NULL,
 	solution_id int4 NOT NULL,
 	CONSTRAINT sectors_in_solutions_pkey PRIMARY KEY (sector_id, solution_id),
-	CONSTRAINT sectors_in_solutions_sector_id_fkey FOREIGN KEY (sector_id) REFERENCES daghub_dataentry.sectors(id) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT sectors_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES daghub_dataentry.solutions(id) ON DELETE CASCADE ON UPDATE CASCADE
+	CONSTRAINT sectors_in_solutions_sector_id_fkey FOREIGN KEY (sector_id) REFERENCES sectors(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT sectors_in_solutions_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES solutions(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
--- daghub_dataentry.solution_translations definition
+-- solution_translations definition
 
 -- Drop table
 
--- DROP TABLE daghub_dataentry.solution_translations;
+-- DROP TABLE solution_translations;
 
-CREATE TABLE daghub_dataentry.solution_translations (
+CREATE TABLE solution_translations (
 	solution_id int4 NOT NULL,
 	language_id int4 NOT NULL,
 	"translation" text NULL,
 	CONSTRAINT solution_translations_pkey PRIMARY KEY (solution_id, language_id),
-	CONSTRAINT solution_translations_language_id_fkey FOREIGN KEY (language_id) REFERENCES daghub_dataentry.languages(id) ON DELETE CASCADE,
-	CONSTRAINT solution_translations_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES daghub_dataentry.solutions(id) ON DELETE CASCADE
+	CONSTRAINT solution_translations_language_id_fkey FOREIGN KEY (language_id) REFERENCES languages(id) ON DELETE CASCADE,
+	CONSTRAINT solution_translations_solution_id_fkey FOREIGN KEY (solution_id) REFERENCES solutions(id) ON DELETE CASCADE
 );
